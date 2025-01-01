@@ -1,0 +1,32 @@
+{% if site.math %}
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    packages: ['base', 'ams', 'noerrors', 'noundefined']
+  },
+  loader: {
+    load: ['[tex]/ams', '[tex]/noerrors', '[tex]/noundefined']
+  },
+  options: {
+    renderActions: {
+      findScript: [200, function (doc) {
+        document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+          const display = !!node.type.match(/; mode=display/);
+          const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+          const text = document.createTextNode('');
+          node.parentNode.replaceChild(text, node);
+          math.start = {node: text, delim: '', n: 0};
+          math.end = {node: text, delim: '', n: 0};
+          doc.math.push(math);
+        });
+      }, '']
+    }
+  }
+};
+</script>
+<script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+{% endif %}
