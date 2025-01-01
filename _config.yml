@@ -2,6 +2,8 @@ title: Your Wiki
 remote_theme: just-the-docs/just-the-docs
 color_scheme: dark
 search_enabled: true
+# Enable math display using MathJax
+math: mathjax
 
 baseurl: "/wiki.fearthedeer9.github.io"
 url: "https://fearthedeer9.github.io"
