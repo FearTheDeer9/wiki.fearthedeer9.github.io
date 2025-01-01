@@ -2,9 +2,10 @@ title: Your Wiki
 remote_theme: just-the-docs/just-the-docs
 color_scheme: dark
 search_enabled: true
+
+baseurl: "/wiki.fearthedeer9.github.io"
+url: "https://fearthedeer9.github.io"
+
 aux_links:
-  "Blog →": 
+  "Blog":
     - "https://fearthedeer9.github.io"
-domain: fearthedeer9.github.io
-url: https://wiki.fearthedeer9.github.io
-baseurl: ""
